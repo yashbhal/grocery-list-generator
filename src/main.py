@@ -23,6 +23,7 @@ def main():
     print_recipes(recipes_list)
     recipe_choice = input("Enter the name of the recipe you want to cook: ")
     ingredients = get_ingredients(recipe_choice, recipes_list)
+    print(ingredients)
 
 
 if __name__ == "__main__":
