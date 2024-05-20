@@ -120,6 +120,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+grocery_list_env/
 .env
 .venv
 env/
