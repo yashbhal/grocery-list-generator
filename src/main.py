@@ -6,9 +6,22 @@ def load_recipe_list():
     return recipe_list['recipes']
 
 
-def get_ingredients(recipe_title):
+def get_ingredients(recipe_title, recipes_list):
     for recipe in load_recipe_list():
         if recipe.get('title') == recipe_title:
             return recipe.get('ingredients')
 
 
+def print_recipes(recipes_list):
+    print('\nWhich one of the following recipes would you like to eat this week?: \n')
+    for recipe in recipes_list:
+        print(recipe.get('title'))
+
+
+def main():
+    recipes_list = load_recipe_list()
+    print_recipes(recipes_list)
+
+
+if __name__ == "__main__":
+    main()
