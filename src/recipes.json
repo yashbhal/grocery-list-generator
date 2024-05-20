@@ -1,0 +1,42 @@
+{
+    "recipes": [
+        {
+            "title": "Pink Sauce Chicken Pasta",
+            "ingredients": [
+                "Chicken",
+                "Pasta",
+                "Red Pasta Sauce",
+                "White Pasta Sauce",
+                "Chicken Seasonings"
+            ]
+        },
+        {
+            "title": "Chicken Shawarma",
+            "ingredients": [
+                "Chicken",
+                "Olive Oil",
+                "Lemon",
+                "Minced Garlic",
+                "Salt, Pepper, Paprika, Cumin",
+                "Greek Yogurt",
+                "Tomatoes",
+                "Onions",
+                "Optional: Cucumbers and Parsley"
+            ]
+        },
+        {
+            "title": "Butter Chicken",
+            "ingredients": [
+                "Chicken",
+                "Rice",
+                "Olive Oil",
+                "Salt, Pepper, Paprika, Turmeric, Ginger, Garlic Powder",
+                "Lemon",
+                "Garam Masala",
+                "Tomatoes",
+                "Greek Yogurt",
+                "Onions"
+            ]
+        }
+    ]
+} 
