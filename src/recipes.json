@@ -1,7 +1,8 @@
 {
     "recipes": [
         {
-            "title": "Pink Sauce Chicken Pasta",
+            "title": "1. Pink Sauce Chicken Pasta",
+            "number": "1",
             "ingredients": [
                 "Chicken",
                 "Pasta",
@@ -11,7 +12,8 @@
             ]
         },
         {
-            "title": "Chicken Shawarma",
+            "title": "2. Chicken Shawarma",
+            "number": "2",
             "ingredients": [
                 "Chicken",
                 "Olive Oil",
@@ -25,7 +27,8 @@
             ]
         },
         {
-            "title": "Butter Chicken",
+            "title": "3. Butter Chicken",
+            "number": "3",
             "ingredients": [
                 "Chicken",
                 "Rice",
