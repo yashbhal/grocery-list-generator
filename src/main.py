@@ -19,11 +19,15 @@ def print_recipes(recipes_list):
 
 
 def main():
+    counter = 0
     recipes_list = load_recipe_list()
     print_recipes(recipes_list)
-    recipe_choice = input("Enter the number of the recipe you want to cook: ")
-    ingredients = get_ingredients(recipe_choice, recipes_list)
-    print(ingredients)
+    recipe_amount = int(input("How many recipes would you like to prep for the week? "))
+    while(counter<recipe_amount):
+        recipe_choice = input("Enter the number of the recipe you want to cook: ")
+        ingredients = get_ingredients(recipe_choice, recipes_list)
+        print(ingredients)
+        counter+=1
 
 
 if __name__ == "__main__":
