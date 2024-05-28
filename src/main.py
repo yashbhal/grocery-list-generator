@@ -28,7 +28,7 @@ def validate_integer_input(prompt):
             print("Invalid input. Enter a valid integer.")
 
 
-def validate_recipe_choice(prompt, max_value):
+def validate_choice(prompt, max_value):
     while True:
         value = validate_integer_input(prompt)
         if 1 <= value <= max_value:
@@ -42,10 +42,10 @@ def main():
     weeks_ingredients = set()
     recipes_list = load_recipe_list()
     print_recipes(recipes_list)
-    recipe_amount = validate_integer_input("How many recipes would you like to prep for the week? ")
+    recipe_amount = validate_choice("How many recipes would you like to prep for the week? ", len(recipes_list))
 
     while(counter < recipe_amount):
-        recipe_choice = validate_recipe_choice("Enter the number of the recipe you want to cook: ", len(recipes_list))
+        recipe_choice = validate_choice("Enter the number of the recipe you want to cook: ", len(recipes_list))
         ingredients = get_ingredients(recipe_choice, recipes_list)
         if ingredients:
             weeks_ingredients.update(get_ingredients(recipe_choice, recipes_list))
