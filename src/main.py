@@ -1,7 +1,7 @@
 import json
 
-def load_recipe_list():
-    with open('recipes.json') as recipe_file:
+def load_recipe_list(file_path = 'recipes.json'):
+    with open(file_path) as recipe_file:
         recipe_list = json.load(recipe_file)
     return recipe_list['recipes']
 
