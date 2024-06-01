@@ -7,7 +7,7 @@ def load_recipe_list():
 
 
 def get_ingredients(recipe_number, recipes_list):
-    for recipe in load_recipe_list():
+    for recipe in recipes_list:
         if recipe.get('number') == recipe_number:
             return recipe.get('ingredients')
     return []
@@ -38,23 +38,23 @@ def validate_choice(prompt, max_value):
 
 
 def main():
-    counter = 0
     weeks_ingredients = set()
     recipes_list = load_recipe_list()
     print_recipes(recipes_list)
     recipe_amount = validate_choice("How many recipes would you like to prep for the week? ", len(recipes_list))
 
-    while(counter < recipe_amount):
+    for _ in range(recipe_amount):
         recipe_choice = validate_choice("Enter the number of the recipe you want to cook: ", len(recipes_list))
         ingredients = get_ingredients(recipe_choice, recipes_list)
         if ingredients:
             weeks_ingredients.update(get_ingredients(recipe_choice, recipes_list))
         else:
             print(f"No ingredients found for {recipe_choice}.")
-        counter+=1
 
     ingredients_list = list(weeks_ingredients)
-    print(ingredients_list)
+    print("\nIngredients for the week:: ")
+    for ingredient in ingredients_list:
+        print(f"- {ingredient}")
 
 
 if __name__ == "__main__":
