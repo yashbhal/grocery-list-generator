@@ -1,7 +1,7 @@
 import unittest
 import json
 from unittest.mock import patch
-from main import load_recipe_list, get_ingredients, print_recipes, validate_integer_input, validate_choice
+from main import load_recipe_list, get_ingredients, print_recipes, validate_integer_input, validate_choice, get_weeks_ingredients
 
 class TestRecipeFunctions(unittest.TestCase):
 
@@ -10,17 +10,17 @@ class TestRecipeFunctions(unittest.TestCase):
             {
                 "title": "Recipe 1",
                 "number": 1,
-                "ingredients": ["ingredient1, ingredient2"]
+                "ingredients": ["ingredient1", "ingredient2"]
             },
             {
                 "title": "Recipe 2",
                 "number": 2,
-                "ingedients": ["ingredient1, ingredient3, ingredient4"]
+                "ingredients": ["ingredient1", "ingredient3", "ingredient4"]
             },
             {
                 "title": "Recipe 3",
                 "number": 3,
-                "ingedients": ["ingredient1, ingredient3, ingredient4", "ingredient5"]
+                "ingredients": ["ingredient1", "ingredient3", "ingredient4", "ingredient5"]
             }
         ]
 
@@ -33,7 +33,7 @@ class TestRecipeFunctions(unittest.TestCase):
 
     def test_get_ingredients(self):
         ingredients = get_ingredients(1, self.recipes)
-        self.assertEqual(ingredients, ["ingredient1, ingredient2"])
+        self.assertEqual(ingredients, ["ingredient1", "ingredient2"])
         ingredients = get_ingredients(4, self.recipes)
         self.assertEqual(ingredients, [])
 
@@ -79,6 +79,24 @@ class TestRecipeFunctions(unittest.TestCase):
             validate_choice("Enter a number: ", max_value)
         self.assertEqual(str(context.exception), "Invalid recipe choice. Enter a number between 1 and 10")
         mock_validate_integer_input.assert_called_once_with("Enter a number: ")
+
+
+    def test_get_weeks_ingredients(self):
+        mock_recipe_choices_input = [1]
+        result = get_weeks_ingredients(mock_recipe_choices_input, self.recipes)
+        self.assertCountEqual(result, ["ingredient1", "ingredient2"])
+
+
+    def test_get_weeks_ingredients_multiple(self):
+        mock_recipe_choices_input = [1, 2]
+        result = get_weeks_ingredients(mock_recipe_choices_input, self.recipes)
+        self.assertCountEqual(result, ["ingredient1", "ingredient2", "ingredient3", "ingredient4"])
+
+
+    def test_get_weeks_ingredients_all(self):
+        mock_recipe_choices_input = [1, 2, 3]
+        result = get_weeks_ingredients(mock_recipe_choices_input, self.recipes)
+        self.assertCountEqual(result, ["ingredient1", "ingredient2", "ingredient3", "ingredient4", "ingredient5"])
 
 
 if __name__ == '__main__':
