@@ -14,7 +14,7 @@ def get_ingredients(recipe_number, recipes_list):
 
 
 def print_recipes(recipes_list):
-    output = '\nRecipe menu\n'
+    output = '\nRecipe Menu\n'
     for recipe in recipes_list:
         output += f"\n{ + recipe.get('number')}. {recipe.get('title')}"
     print(output)
